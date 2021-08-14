@@ -1,0 +1,39 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+
+    <f:view contentType="text/html">
+        <h:head>
+            <f:facet name="first">
+                <meta content='text/html; charset=UTF-8' http-equiv="Content-Type"/>
+                <title>Listar Clientes</title>
+            </f:facet>
+        </h:head>
+        <h:body>
+            <h:form>
+            <p:dataTable var="idx_fila" value="#{JSFManagedBean.listaCliente}">
+
+                <f:facet name="header">
+                    <h:outputText value="Listado de Clientes" />
+                </f:facet>
+                <p:column filterBy="#{idx_fila.numCedula}" headerText="Núm. Cédula">
+                    <h:outputText value="#{idx_fila.numCedula}"/>
+                </p:column>
+                <p:column filterBy="#{idx_fila.apellidosNombres}" headerText="Apellidos Nombres">
+                    <h:outputText value="#{idx_fila.apellidosNombres}"/>
+                </p:column>
+                <p:column filterBy="#{idx_fila.usuario}" headerText="Usuario">
+                    <h:outputText value="#{idx_fila.usuario}"/>
+                </p:column>
+                <p:column filterBy="#{idx_fila.clave}" headerText="Clave">
+                    <h:outputText value="#{idx_fila.clave}"/>
+                </p:column>
+            </p:dataTable>
+                  </h:form>
+        </h:body>
+
+    </f:view>
+</html>
